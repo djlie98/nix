@@ -44,7 +44,6 @@
     typescript
     unzip
     vim
-    neovim
     wget
     wslu
     yazi
@@ -249,7 +248,9 @@ in {
         gcob = "git checkout -b";
         gcm = "git checkout master";
         gcd = "git checkout develop";
+
         v = "nvim";
+        vlua = "NVIM_APPNAME=\"nvim-lua\" nvim";
 
         pbcopy = "/mnt/c/Windows/System32/clip.exe";
         pbpaste = "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -command 'Get-Clipboard'";

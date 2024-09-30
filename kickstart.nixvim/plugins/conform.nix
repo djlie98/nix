@@ -12,8 +12,8 @@
     # https://nix-community.github.io/nixvim/plugins/conform-nvim.html
     plugins.conform-nvim = {
       enable = true;
-      notifyOnError = false;
-      formatOnSave = ''
+      settings.notify_on_error = false;
+      settings.format_on_save = ''
         function(bufnr)
           -- Disable "format_on_save lsp_fallback" for lanuages that don't
           -- have a well standardized coding style. You can add additional
@@ -25,7 +25,7 @@
           }
         end
       '';
-      formattersByFt = {
+      settings.formatters_by_ft = {
         lua = ["stylua"];
         # Conform can also run multiple formatters sequentially
         # python = [ "isort "black" ];

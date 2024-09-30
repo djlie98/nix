@@ -2,6 +2,10 @@
   programs.nixvim = {
     # Collection of various small independent plugins/modules
     # https://nix-community.github.io/nixvim/plugins/mini.html
+    plugins.web-devicons = {
+      enable = true;
+    };
+
     plugins.mini = {
       enable = true;
 
@@ -14,6 +18,9 @@
         #  - ci'  - [C]hange [I]nside [']quote
         ai = {
           n_lines = 500;
+        };
+
+        indentscope = {
         };
 
         # Add/delete/replace surroundings (brackets, quotes, etc.)
