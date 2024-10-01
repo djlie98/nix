@@ -115,6 +115,19 @@
       };
       settings = {
         extensions.__raw = "{ ['ui-select'] = { require('telescope.themes').get_dropdown() } }";
+
+        defaults = {
+          mappings = {
+            i = {
+              "<C-j>" = { 
+                __raw = "require('telescope.actions').move_selection_next";
+              };
+              "<C-k>" = { 
+                __raw = "require('telescope.actions').move_selection_previous";
+              };
+            };
+          };
+        };
       };
     };
 

@@ -32,23 +32,26 @@
           };
         };
 
-        ai = {};
-
-        # ai.__raw = "'
-        #     function()
-        #       local spec_treesitter = require('mini.ai').gen_spec.treesitter;
-        #   return {
-        #   n_lines = 500;
-        #   custom_textobjects = {
-        #         a = spec_treesitter { a = '@parameter.outer', i = '@parameter.inner' },
-        #         c = spec_treesitter { a = '@class.outer', i = '@class.inner' },
-        #         f = spec_treesitter { a = '@function.outer', i = '@function.inner' },
-        #         F = spec_treesitter { a = '@call.outer', i = '@call.inner' },
-        #         o = spec_treesitter { a = { '@block.outer' , '@conditional.outer', '@loop.outer'}, i = { '@block.inner' , '@conditional.inner', '@loop.inner'}, },
-        #       }
-        # };
-        #     end
-        # '';
+        ai = {
+          n_lines = 500;
+          custom_textobjects = {
+                a = { 
+                  __raw = "require('mini.ai').gen_spec.treesitter { a = '@parameter.outer', i = '@parameter.inner' }";
+                };
+                c = { 
+                  __raw = "require('mini.ai').gen_spec.treesitter { a = '@class.outer', i = '@class.inner' }";
+                };
+                f = { 
+                  __raw = "require('mini.ai').gen_spec.treesitter { a = '@function.outer', i = '@function.inner' }";
+                };
+                F = { 
+                  __raw = "require('mini.ai').gen_spec.treesitter { a = '@call.outer', i = '@call.inner' }";
+                };
+                o = { 
+                  __raw = "require('mini.ai').gen_spec.treesitter { a = { '@block.outer' , '@conditional.outer', '@loop.outer'}, i = { '@block.inner' , '@conditional.inner', '@loop.inner'}, }";
+                };
+              };
+        };
 
         indentscope = {
         };

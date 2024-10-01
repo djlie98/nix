@@ -15,6 +15,7 @@
     ./plugins/project-nvim.nix
     ./plugins/noice.nix
     ./plugins/lazygit.nix
+    ./plugins/notify.nix
 
     # NOTE: Add/Configure additional plugins for Kickstart.nixvim
     #
