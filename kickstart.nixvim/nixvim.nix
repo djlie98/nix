@@ -13,6 +13,8 @@
     ./plugins/treesitter.nix
     ./plugins/oil.nix
     ./plugins/project-nvim.nix
+    ./plugins/noice.nix
+    ./plugins/lazygit.nix
 
     # NOTE: Add/Configure additional plugins for Kickstart.nixvim
     #
@@ -404,12 +406,22 @@
       {
         mode = "n";
         key = "<leader>w";
-        action = ":w";
+        action = ":w<cr>";
       }
       {
         mode = "n";
         key = "<leader>z";
-        action = ":wq";
+        action = ":wq<cr>";
+      }
+
+      # Lazygit
+      {
+        mode = "n";
+        key = "<leader>tg";
+        action = ":LazyGitCurrentFile<cr>";
+        options = {
+          desc = "[T]oggle [L]azygit";
+        };
       }
     ];
 
