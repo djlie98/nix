@@ -145,10 +145,10 @@
         settings = {
           flavour = "macchiato";
           integrations = {
+            illuminate = true;
             cmp = true;
             gitsigns = true;
             harpoon = true;
-            illuminate = true;
             indent_blankline = {
               enabled = false;
               scope_color = "sapphire";
@@ -195,19 +195,18 @@
       # Enable mouse mode, can be useful for resizing splits for example!
       mouse = "a";
 
+      # Enable auto indenting
+      smartindent = true;
+      shiftwidth = 2;
+
       # Don't show the mode, since it's already in the statusline
       showmode = false;
 
-      #  See `:help 'clipboard'`
-      clipboard = {
-        providers = {
-          xclip.enable = true;
-        };
-        register = "unnamedplus";
-      };
-
       # Enable break indent
       breakindent = true;
+
+      # Disable text wrap
+      wrap = false;
 
       # Save undo history
       undofile = true;
@@ -285,7 +284,6 @@
         };
       }
       # TIP: Disable arrow keys in normal mode
-      /*
       {
         mode = "n";
         key = "<left>";
@@ -306,95 +304,6 @@
         key = "<down>";
         action = "<cmd>echo 'Use j to move!!'<CR>";
       }
-      */
-      # Keybinds to make split navigation easier.
-      #  Use CTRL+<hjkl> to switch between windows
-      #
-      #  See `:help wincmd` for a list of all window commands
-      # {
-      #   mode = "n";
-      #   key = "<C-h>";
-      #   action.__raw = ''
-      #     function()
-      #       vim.cmd("normal! <<")
-      #     end
-      #   '';
-      #   options = {
-      #     desc = "Shift Left";
-      #   };
-      # }
-      # {
-      #   mode = "n";
-      #   key = "<C-l>";
-      #   action.__raw = ''
-      #     function()
-      #       vim.cmd("normal! >>")
-      #     end
-      #   '';
-      #   options = {
-      #     desc = "Shift Right";
-      #   };
-      # }
-      # {
-      #   mode = "n";
-      #   key = "<C-j>";
-      #   action = "<cmd>MoveLine(1)<CR>";
-      #   options = {
-      #     desc = "Shift Down";
-      #   };
-      # }
-      # {
-      #   mode = "n";
-      #   key = "<C-k>";
-      #   action = "<cmd>MoveLine(-1)<CR>";
-      #   options = {
-      #     desc = "Shift Up";
-      #   };
-      # }
-      #
-      # # Shift Selected Lines
-      # {
-      #   mode = "v";
-      #   key = "<C-h>";
-      #   action.__raw = ''
-      #     function()
-      #       vim.cmd("normal! <<")
-      #       vim.cmd("normal! gv")
-      #     end
-      #   '';
-      #   options = {
-      #     desc = "Shift Left";
-      #   };
-      # }
-      # {
-      #   mode = "v";
-      #   key = "<C-l>";
-      #   action.__raw = ''
-      #     function()
-      #       vim.cmd("normal! >>")
-      #       vim.cmd("normal! gv")
-      #     end
-      #   '';
-      #   options = {
-      #     desc = "Shift Right";
-      #   };
-      # }
-      # {
-      #   mode = "v";
-      #   key = "<C-j>";
-      #   action = "<cmd>MoveBlock(1)<CR>";
-      #   options = {
-      #     desc = "Shift Down";
-      #   };
-      # }
-      # {
-      #   mode = "v";
-      #   key = "<C-k>";
-      #   action = "<cmd>MoveBlock(-1)<CR>";
-      #   options = {
-      #     desc = "Shift Up";
-      #   };
-      # }
 
       # Redo
       {
@@ -476,7 +385,7 @@
     ];
 
     extraConfigLua = ''
-
+      vim.opt.clipboard = "unnamed,unnamedplus"
     '';
 
     # TODO: Figure out where to move this
