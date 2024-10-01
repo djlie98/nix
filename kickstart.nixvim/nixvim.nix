@@ -23,6 +23,8 @@
     ./plugins/lualine.nix
     ./plugins/harpoon.nix
     ./plugins/debug.nix
+    ./plugins/indent-blankline.nix
+    ./plugins/lint.nix
 
     # Config
     ./config/keymaps.nix
@@ -79,26 +81,5 @@
         };
       };
     };
-
-    # https://nix-community.github.io/nixvim/NeovimOptions/index.html?highlight=extraplugins#extraplugins
-    extraPlugins = with pkgs.vimPlugins; [
-      # Useful for getting pretty icons, but requires a Nerd Font.
-    ];
-
-    extraConfigLua = ''
-      vim.opt.clipboard = "unnamed,unnamedplus"
-    '';
-
-    # TODO: Figure out where to move this
-    # https://nix-community.github.io/nixvim/NeovimOptions/index.html?highlight=extraplugins#extraconfigluapre
-    extraConfigLuaPre = ''
-
-    '';
-
-    # The line beneath this is called `modeline`. See `:help modeline`
-    # https://nix-community.github.io/nixvim/NeovimOptions/index.html?highlight=extraplugins#extraconfigluapost
-    extraConfigLuaPost = ''
-      -- vim: ts=2 sts=2 sw=2 et
-    '';
   };
 }

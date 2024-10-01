@@ -3,8 +3,7 @@
     opts = {
       # Show line numbers
       number = true;
-      # You can also add relative line numbers, to help with jumping.
-      #  Experiment for yourself to see if you like it!
+
       relativenumber = true;
 
       # Enable mouse mode, can be useful for resizing splits for example!
@@ -53,7 +52,7 @@
       #  See `:help 'list'`
       #  See `:help 'listchars'`
       list = true;
-      # NOTE: .__raw here means that this field is raw lua code
+
       listchars.__raw = "{ tab = '» ', trail = '·', nbsp = '␣' }";
 
       # Preview subsitutions live, as you type!
@@ -68,5 +67,21 @@
       # See `:help hlsearch`
       hlsearch = true;
     };
+
+    extraPlugins = with pkgs.vimPlugins; [
+      # Useful for getting pretty icons, but requires a Nerd Font.
+    ];
+
+    extraConfigLua = ''
+      vim.opt.clipboard = "unnamed,unnamedplus"
+    '';
+
+    extraConfigLuaPre = ''
+
+    '';
+
+    extraConfigLuaPost = ''
+
+    '';
   };
 }
