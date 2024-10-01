@@ -22,25 +22,12 @@
     ./plugins/notify.nix
     ./plugins/lualine.nix
     ./plugins/harpoon.nix
+    ./plugins/debug.nix
 
     # Config
     ./config/keymaps.nix
     ./config/opts.nix
     ./config/colorschemes.nix
-
-    # NOTE: Add/Configure additional plugins for Kickstart.nixvim
-    #
-    #  Here are some example plugins that I've included in the Kickstart repository.
-    #  Uncomment any of the lines below to enable them (you will need to restart nvim).
-    #
-    # ./plugins/kickstart/plugins/debug.nix
-    # ./plugins/kickstart/plugins/indent-blankline.nix
-    # ./plugins/kickstart/plugins/lint.nix
-    # ./plugins/kickstart/plugins/autopairs.nix
-    # ./plugins/kickstart/plugins/neo-tree.nix
-    #
-    # NOTE: Configure your own plugins `see https://nix-community.github.io/nixvim/`
-    # Add your plugins to ./plugins/custom/plugins and import them below
   ];
 
   programs.nixvim = {
@@ -50,12 +37,9 @@
 
     # https://nix-community.github.io/nixvim/NeovimOptions/index.html?highlight=globals#globals
     globals = {
-      # Set <space> as the leader key
-      # See `:help mapleader`
       mapleader = " ";
       maplocalleader = " ";
 
-      # Set to true if you have a Nerd Font installed and selected in the terminal
       have_nerd_font = true;
     };
 
