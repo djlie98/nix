@@ -310,90 +310,90 @@
       #  Use CTRL+<hjkl> to switch between windows
       #
       #  See `:help wincmd` for a list of all window commands
-      {
-        mode = "n";
-        key = "<C-h>";
-        action.__raw = ''
-          function()
-            vim.cmd("normal! <<")
-          end
-        '';
-        options = {
-          desc = "Shift Left";
-        };
-      }
-      {
-        mode = "n";
-        key = "<C-l>";
-        action.__raw = ''
-          function()
-            vim.cmd("normal! >>")
-          end
-        '';
-        options = {
-          desc = "Shift Right";
-        };
-      }
-      {
-        mode = "n";
-        key = "<C-j>";
-        action = ":MoveLine(1)<CR>";
-        options = {
-          desc = "Shift Down";
-        };
-      }
-      {
-        mode = "n";
-        key = "<C-k>";
-        action = ":MoveLine(-1)<CR>";
-        options = {
-          desc = "Shift Up";
-        };
-      }
-
-      # Shift Selected Lines
-      {
-        mode = "v";
-        key = "<C-h>";
-        action.__raw = ''
-          function()
-            vim.cmd("normal! <<")
-            vim.cmd("normal! gv")
-          end
-        '';
-        options = {
-          desc = "Shift Left";
-        };
-      }
-      {
-        mode = "v";
-        key = "<C-l>";
-        action.__raw = ''
-          function()
-            vim.cmd("normal! >>")
-            vim.cmd("normal! gv")
-          end
-        '';
-        options = {
-          desc = "Shift Right";
-        };
-      }
-      {
-        mode = "v";
-        key = "<C-j>";
-        action = ":MoveBlock(1)<CR>";
-        options = {
-          desc = "Shift Down";
-        };
-      }
-      {
-        mode = "v";
-        key = "<C-k>";
-        action = ":MoveBlock(-1)<CR>";
-        options = {
-          desc = "Shift Up";
-        };
-      }
+      # {
+      #   mode = "n";
+      #   key = "<C-h>";
+      #   action.__raw = ''
+      #     function()
+      #       vim.cmd("normal! <<")
+      #     end
+      #   '';
+      #   options = {
+      #     desc = "Shift Left";
+      #   };
+      # }
+      # {
+      #   mode = "n";
+      #   key = "<C-l>";
+      #   action.__raw = ''
+      #     function()
+      #       vim.cmd("normal! >>")
+      #     end
+      #   '';
+      #   options = {
+      #     desc = "Shift Right";
+      #   };
+      # }
+      # {
+      #   mode = "n";
+      #   key = "<C-j>";
+      #   action = "<cmd>MoveLine(1)<CR>";
+      #   options = {
+      #     desc = "Shift Down";
+      #   };
+      # }
+      # {
+      #   mode = "n";
+      #   key = "<C-k>";
+      #   action = "<cmd>MoveLine(-1)<CR>";
+      #   options = {
+      #     desc = "Shift Up";
+      #   };
+      # }
+      #
+      # # Shift Selected Lines
+      # {
+      #   mode = "v";
+      #   key = "<C-h>";
+      #   action.__raw = ''
+      #     function()
+      #       vim.cmd("normal! <<")
+      #       vim.cmd("normal! gv")
+      #     end
+      #   '';
+      #   options = {
+      #     desc = "Shift Left";
+      #   };
+      # }
+      # {
+      #   mode = "v";
+      #   key = "<C-l>";
+      #   action.__raw = ''
+      #     function()
+      #       vim.cmd("normal! >>")
+      #       vim.cmd("normal! gv")
+      #     end
+      #   '';
+      #   options = {
+      #     desc = "Shift Right";
+      #   };
+      # }
+      # {
+      #   mode = "v";
+      #   key = "<C-j>";
+      #   action = "<cmd>MoveBlock(1)<CR>";
+      #   options = {
+      #     desc = "Shift Down";
+      #   };
+      # }
+      # {
+      #   mode = "v";
+      #   key = "<C-k>";
+      #   action = "<cmd>MoveBlock(-1)<CR>";
+      #   options = {
+      #     desc = "Shift Up";
+      #   };
+      # }
 
       # Redo
       {
@@ -406,19 +406,19 @@
       {
         mode = "n";
         key = "<leader>w";
-        action = ":w<cr>";
+        action = "<cmd>w<cr>";
       }
       {
         mode = "n";
         key = "<leader>z";
-        action = ":wq<cr>";
+        action = "<cmd>wq<cr>";
       }
 
       # Lazygit
       {
         mode = "n";
         key = "<leader>tg";
-        action = ":LazyGitCurrentFile<cr>";
+        action = "<cmd>LazyGitCurrentFile<cr>";
         options = {
           desc = "[T]oggle [L]azygit";
         };

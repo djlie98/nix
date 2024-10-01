@@ -17,9 +17,24 @@
         #  - yinq - [Y]ank [I]nside [N]ext [Q]uote
         #  - ci'  - [C]hange [I]nside [']quote
 
+        move = {
+          mappings = {
+            left = "<C-h>";
+            right = "<C-l>";
+            down = "<C-j>";
+            up = "<C-k>";
+
+            # Move current line in Normal mode
+            line_left = "<C-h>";
+            line_right = "<C-l>";
+            line_down = "<C-j>";
+            line_up = "<C-k>";
+          };
+        };
+
         ai = {};
 
-        # ai.__raw = ''
+        # ai.__raw = "'
         #     function()
         #       local spec_treesitter = require('mini.ai').gen_spec.treesitter;
         #   return {
