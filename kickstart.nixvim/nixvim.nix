@@ -311,34 +311,105 @@
       {
         mode = "n";
         key = "<C-h>";
-        action = "<C-w><C-h>";
+        action.__raw = ''
+          function()
+            vim.cmd("normal! <<")
+          end
+        '';
         options = {
-          desc = "Move focus to the left window";
+          desc = "Shift Left";
         };
       }
       {
         mode = "n";
         key = "<C-l>";
-        action = "<C-w><C-l>";
+        action.__raw = ''
+          function()
+            vim.cmd("normal! >>")
+          end
+        '';
         options = {
-          desc = "Move focus to the right window";
+          desc = "Shift Right";
         };
       }
       {
         mode = "n";
         key = "<C-j>";
-        action = "<C-w><C-j>";
+        action = ":MoveLine(1)<CR>";
         options = {
-          desc = "Move focus to the lower window";
+          desc = "Shift Down";
         };
       }
       {
         mode = "n";
         key = "<C-k>";
-        action = "<C-w><C-k>";
+        action = ":MoveLine(-1)<CR>";
         options = {
-          desc = "Move focus to the upper window";
+          desc = "Shift Up";
         };
+      }
+
+      # Shift Selected Lines
+      {
+        mode = "v";
+        key = "<C-h>";
+        action.__raw = ''
+          function()
+            vim.cmd("normal! <<")
+            vim.cmd("normal! gv")
+          end
+        '';
+        options = {
+          desc = "Shift Left";
+        };
+      }
+      {
+        mode = "v";
+        key = "<C-l>";
+        action.__raw = ''
+          function()
+            vim.cmd("normal! >>")
+            vim.cmd("normal! gv")
+          end
+        '';
+        options = {
+          desc = "Shift Right";
+        };
+      }
+      {
+        mode = "v";
+        key = "<C-j>";
+        action = ":MoveBlock(1)<CR>";
+        options = {
+          desc = "Shift Down";
+        };
+      }
+      {
+        mode = "v";
+        key = "<C-k>";
+        action = ":MoveBlock(-1)<CR>";
+        options = {
+          desc = "Shift Up";
+        };
+      }
+
+      # Redo
+      {
+        mode = "n";
+        key = "U";
+        action = "<C-r>";
+      }
+
+      # Quick Commands
+      {
+        mode = "n";
+        key = "<leader>w";
+        action = ":w";
+      }
+      {
+        mode = "n";
+        key = "<leader>z";
+        action = ":wq";
       }
     ];
 
