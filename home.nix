@@ -46,6 +46,7 @@
     vim
     wget
     wslu
+    xclip
     yazi
     zip
   ];

@@ -105,6 +105,13 @@
             desc = "[ ] Find existing buffers";
           };
         };
+        "<leader>fp" = {
+          mode = "n";
+          action = "projects";
+          options = {
+            desc = "[F]ind [P]rojects";
+          };
+        };
       };
       settings = {
         extensions.__raw = "{ ['ui-select'] = { require('telescope.themes').get_dropdown() } }";

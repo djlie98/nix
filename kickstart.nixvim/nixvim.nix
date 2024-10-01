@@ -1,14 +1,6 @@
 { pkgs, inputs, ... }: {
   imports = [
-    # NOTE: The first thing you will want to do is uncommented on of the three imports below
-    # depending on which module you chose to use to install Nixvim.
-    #
-    # Uncomment if you are using the home-manager module
     inputs.nixvim.homeManagerModules.nixvim
-    # Uncomment if you are using the nixos module
-    #inputs.nixvim.nixosModules.nixvim
-    # Uncomment if you are using the nix-darwin module
-    #inputs.nixvim.nixDarwinModules.nixvim
 
     # Plugins
     ./plugins/gitsigns.nix
@@ -20,6 +12,7 @@
     ./plugins/mini.nix
     ./plugins/treesitter.nix
     ./plugins/oil.nix
+    ./plugins/project-nvim.nix
 
     # NOTE: Add/Configure additional plugins for Kickstart.nixvim
     #
@@ -124,13 +117,51 @@
     #
     # If you want to see what colorschemes are already installed, you can use `:Telescope colorschme`.
     colorschemes = {
-      # https://nix-community.github.io/nixvim/colorschemes/tokyonight/index.html
       tokyonight = {
+        enable = false;
+        settings = {
+          style = "night";
+          transparent = true;
+          plugins = {
+            telescope = true;
+            cmp = true;
+            gitsigns = true;
+            indent_blankline = true;
+            notify = true;
+            noice = true;
+            treesitter = true;
+            treesitter_context = true;
+            which-key = true;
+            dap = true;
+          };
+        };
+      };
+
+      catppuccin = {
         enable = true;
         settings = {
-          # Like many other themes, this one has different styles, and you could load
-          # any other, such as 'storm', 'moon', or 'day'.
-          style = "night";
+          flavour = "macchiato";
+          integrations = {
+            cmp = true;
+            gitsigns = true;
+            harpoon = true;
+            illuminate = true;
+            indent_blankline = {
+              enabled = false;
+              scope_color = "sapphire";
+              colored_indent_levels = false;
+            };
+            mason = true;
+            native_lsp = { enabled = true; };
+            notify = true;
+            nvimtree = true;
+            neotree = true;
+            symbols_outline = true;
+            telescope = true;
+            treesitter = true;
+            treesitter_context = true;
+          };
+          transparent_background = true;
         };
       };
     };
@@ -156,7 +187,7 @@
       number = true;
       # You can also add relative line numbers, to help with jumping.
       #  Experiment for yourself to see if you like it!
-      #relativenumber = true
+      relativenumber = true;
 
       # Enable mouse mode, can be useful for resizing splits for example!
       mouse = "a";
@@ -167,12 +198,8 @@
       #  See `:help 'clipboard'`
       clipboard = {
         providers = {
-          wl-copy.enable = true; # For Wayland
-          xsel.enable = true; # For X11
+          xclip.enable = true;
         };
-
-        # Sync clipboard between OS and Neovim
-        #  Remove this option if you want your OS clipboard to remain independent.
         register = "unnamedplus";
       };
 
@@ -229,6 +256,16 @@
         mode = "n";
         key = "<Esc>";
         action = "<cmd>nohlsearch<CR>";
+      }
+      # Open Oil
+      {
+        mode = "n";
+        key = "<leader>e";
+        action.__raw = ''
+          function()
+            require("oil").open()
+          end
+        '';
       }
       # Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
       # for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -353,6 +390,10 @@
       # Useful for getting pretty icons, but requires a Nerd Font.
 
     ];
+
+    extraConfigLua = ''
+
+    '';
 
     # TODO: Figure out where to move this
     # https://nix-community.github.io/nixvim/NeovimOptions/index.html?highlight=extraplugins#extraconfigluapre

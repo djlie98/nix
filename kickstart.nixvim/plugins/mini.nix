@@ -23,6 +23,15 @@
         indentscope = {
         };
 
+        pairs = {
+        };
+
+        comment = {
+        };
+
+        cursorword = {
+        };
+
         # Add/delete/replace surroundings (brackets, quotes, etc.)
         #
         # Examples:
