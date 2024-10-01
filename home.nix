@@ -235,7 +235,7 @@ in {
         gc = "nix-collect-garbage --delete-old";
         refresh = "source ${config.home.homeDirectory}/.zshrc";
         show_path = "echo $PATH | tr ':' '\n'";
-        
+
         update = "sudo nixos-rebuild switch --flake ~/configuration";
 
         # FIXME: add more git aliases here if you want them

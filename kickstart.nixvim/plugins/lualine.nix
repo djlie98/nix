@@ -7,15 +7,21 @@
           options = {
             theme = "catppuccin";
             globalstatus = true;
-            component_separators = { left = "", right = "" };
-            section_separators = { left = "█", right = "█" };
+            component_separators = { left = ""; right = ""; };
+            section_separators = { left = "█"; right = "█"; };
           };
           sections = {
             lualine_b = [
-              { "branch", icon = "", fmt = truncate_branch_name };
-              harpoon_component;
-              "diff";
-              "diagnostics";
+              {
+                __raw = ''
+                  { "branch", icon = "", fmt = truncate_branch_name }
+                '';
+              }
+              {
+                __raw = "harpoon_component";
+              }
+              "diff"
+              "diagnostics"
             ];
             lualine_c = [
               {
@@ -25,13 +31,13 @@
               }
             ];
             lualine_x = [
-              "filetype";
+              "filetype"
             ];
           };
         };
       };
 
-      extraConfigLua = ''
+      extraConfigLuaPre = ''
         local harpoon = require("harpoon.mark")
         local function truncate_branch_name(branch)
           if not branch or branch == "" then
