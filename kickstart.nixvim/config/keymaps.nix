@@ -81,6 +81,44 @@
           desc = "[T]oggle [L]azygit";
         };
       }
+
+      # Flash
+      {
+        mode = "n";
+        key = "<leader>jj";
+        action.__raw = ''
+          function()
+          	require("flash").jump()
+          end
+        '';
+        options = {
+          desc = "Flash Jump";
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>jt";
+        action.__raw = ''
+          function()
+          	require("flash").treesitter()
+          end
+        '';
+        options = {
+          desc = "Flash Treesitter";
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>jr";
+        action.__raw = ''
+          function()
+          	require("flash").treesitter_search()
+          end
+        '';
+        options = {
+          desc = "Flash Treesitter Search";
+        };
+      }
     ];
   };
 }

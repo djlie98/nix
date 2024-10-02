@@ -25,6 +25,7 @@
     ./plugins/debug.nix
     ./plugins/indent-blankline.nix
     ./plugins/lint.nix
+    ./plugins/ai.nix
 
     # Config
     ./config/keymaps.nix
