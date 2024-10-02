@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   programs.nixvim = {
     opts = {
       # Show line numbers
