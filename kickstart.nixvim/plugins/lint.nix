@@ -1,5 +1,15 @@
-{
+{pkgs, ...}: {
   programs.nixvim = {
+    extraPlugins = with pkgs; [
+      vimPlugins.statix
+      hadolint
+      nodePackages.jsonlint
+      yamllint
+      tflint
+      eslint_d
+      pylint
+    ];
+
     # Linting
     # https://nix-community.github.io/nixvim/plugins/lint/index.html
     plugins.lint = {
@@ -7,7 +17,7 @@
 
       # NOTE: Enabling these will cause errors unless these tools are installed
       lintersByFt = {
-        nix = ["nix"];
+        nix = ["statix"];
         markdown = [
           "markdownlint"
         ];
@@ -15,7 +25,6 @@
         json = ["jsonlint"];
         terraform = ["tflint"];
         yaml = ["yamllint"];
-        bash = ["bash"];
         typescript = ["eslint_d"];
         javascript = ["eslint_d"];
         python = ["pylint"];

@@ -86,6 +86,10 @@
           enable = true;
         };
 
+        nil-ls = {
+          enable = true;
+        };
+
         lua-ls = {
           enable = true;
 
@@ -161,10 +165,10 @@
           #  Symbols are things like variables, functions, types, etc.
           {
             mode = "n";
-            key = "<leader>ds";
+            key = "<leader>fs";
             action.__raw = "require('telescope.builtin').lsp_document_symbols";
             options = {
-              desc = "LSP: [D]ocument [S]ymbols";
+              desc = "LSP: [F]ind [S]ymbols";
             };
           }
           # Fuzzy find all the symbols in your current workspace.

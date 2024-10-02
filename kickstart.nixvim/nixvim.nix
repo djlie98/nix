@@ -26,6 +26,7 @@
     ./plugins/indent-blankline.nix
     ./plugins/lint.nix
     ./plugins/ai.nix
+    ./plugins/flash.nix
 
     # Config
     ./config/keymaps.nix

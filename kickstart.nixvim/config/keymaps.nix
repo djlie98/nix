@@ -17,6 +17,40 @@
           end
         '';
       }
+      # Window Navigation
+      {
+        mode = "n";
+        key = "<A-h>";
+        action = "<C-w><C-h>";
+        options = {
+          desc = "Move focus to the left window";
+        };
+      }
+      {
+        mode = "n";
+        key = "<A-l>";
+        action = "<C-w><C-l>";
+        options = {
+          desc = "Move focus to the right window";
+        };
+      }
+      {
+        mode = "n";
+        key = "<A-j>";
+        action = "<C-w><C-j>";
+        options = {
+          desc = "Move focus to the lower window";
+        };
+      }
+      {
+        mode = "n";
+        key = "<A-k>";
+        action = "<C-w><C-k>";
+        options = {
+          desc = "Move focus to the upper window";
+        };
+      }
+
       # Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
       # for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
       # is not what someone will guess without a bit more experience.
@@ -117,6 +151,22 @@
         '';
         options = {
           desc = "Flash Treesitter Search";
+        };
+      }
+
+      # Open Diagnostic under cursor
+      {
+        mode = "n";
+        key = "<leader>d";
+        action.__raw = ''
+          function()
+          	vim.diagnostic.open_float({
+          		border = "rounded",
+          	})
+          end
+        '';
+        options = {
+          desc = "Open Diagnostic under cursor";
         };
       }
     ];

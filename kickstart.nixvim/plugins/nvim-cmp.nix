@@ -118,10 +118,10 @@
             name = "luasnip";
           }
           {
-            name = "copilot";
+            name = "path";
           }
           {
-            name = "path";
+            name = "copilot";
           }
         ];
       };

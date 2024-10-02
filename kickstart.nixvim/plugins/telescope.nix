@@ -56,11 +56,11 @@
             desc = "[F]ind [F]iles";
           };
         };
-        "<leader>fs" = {
+        "<leader>ft" = {
           mode = "n";
           action = "builtin";
           options = {
-            desc = "[F]ind [S]elect Telescope";
+            desc = "[F]ind Select [T]elescope";
           };
         };
         "<leader>fc" = {
@@ -119,10 +119,10 @@
         defaults = {
           mappings = {
             i = {
-              "<C-j>" = { 
+              "<C-j>" = {
                 __raw = "require('telescope.actions').move_selection_next";
               };
-              "<C-k>" = { 
+              "<C-k>" = {
                 __raw = "require('telescope.actions').move_selection_previous";
               };
             };

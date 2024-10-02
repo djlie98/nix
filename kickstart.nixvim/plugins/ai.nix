@@ -12,16 +12,12 @@
     plugins.copilot-lua = {
       enable = true;
 
-      suggestions = {
+      suggestion = {
         enabled = false;
       };
 
-      panels = {
+      panel = {
         enabled = false;
-      };
-
-      filetypes = {
-        yaml = true;
       };
     };
 
