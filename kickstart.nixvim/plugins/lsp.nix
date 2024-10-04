@@ -86,6 +86,10 @@
           enable = true;
         };
 
+        helm-ls = {
+          enable = true;
+        };
+
         nil-ls = {
           enable = true;
         };

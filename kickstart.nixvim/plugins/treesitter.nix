@@ -32,8 +32,46 @@
 
     plugins.treesitter-textobjects = {
       enable = true;
+
+      swap = {
+        enable = true;
+
+        swapNext = {
+          "g>" = {
+            desc = "Swap with next parameter";
+            query = "@parameter.inner";
+          };
+        };
+
+        swapPrevious = {
+          "g<" = {
+            desc = "Swap with previous parameter";
+            query = "@parameter.inner";
+          };
+        };
+      };
+
+      move = {
+        enable = true;
+        gotoNextStart = {
+          "]m" = "@function.outer";
+          "]c" = "@class.outer";
+        };
+        gotoNextEnd = {
+          "]M" = "@function.outer";
+          "]C" = "@class.outer";
+        };
+        gotoPreviousStart = {
+          "[m" = "@function.outer";
+          "[c" = "@class.outer";
+        };
+        gotoPreviousEnd = {
+          "[M" = "@function.outer";
+          "[C" = "@class.outer";
+        };
+      };
     };
-    
+
     plugins.treesitter-context = {
       enable = true;
     };

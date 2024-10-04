@@ -38,6 +38,9 @@
             a = {
               __raw = "require('mini.ai').gen_spec.treesitter { a = '@parameter.outer', i = '@parameter.inner' }";
             };
+            A = {
+              __raw = "require('mini.ai').gen_spec.treesitter { l = '@assignment.lhs', h = '@assignment.rhs' }";
+            };
             c = {
               __raw = "require('mini.ai').gen_spec.treesitter { a = '@class.outer', i = '@class.inner' }";
             };

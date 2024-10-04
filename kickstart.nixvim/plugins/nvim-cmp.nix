@@ -8,6 +8,10 @@
       enable = true;
     };
 
+    plugins.cmp-cmdline = {
+      enable = true;
+    };
+
     # https://nix-community.github.io/nixvim/plugins/cmp-nvim-lsp.html
     plugins.cmp-nvim-lsp = {
       enable = true;
@@ -46,6 +50,37 @@
               require('luasnip').lsp_expand(args.body)
             end
           '';
+        };
+
+        window = {
+          completion = {
+            border = [
+              "┌"
+              "─"
+              "┐"
+              "│"
+              "┘"
+              "─"
+              "└"
+              "│"
+            ];
+          };
+          documentation = {
+            border = [
+              "┌"
+              "─"
+              "┐"
+              "│"
+              "┘"
+              "─"
+              "└"
+              "│"
+            ];
+          };
+        };
+
+        experimental = {
+          ghost_text = true;
         };
 
         completion = {

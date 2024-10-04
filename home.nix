@@ -28,6 +28,7 @@
     google-cloud-sdk
     htop
     jq
+    just
     k9s
     killall
     kubectl
@@ -49,6 +50,14 @@
     xclip
     yazi
     zip
+
+    # Linters
+    hadolint
+    nodePackages.jsonlint
+    yamllint
+    tflint
+    eslint_d
+    pylint
   ];
 
   stable-packages = with pkgs; [

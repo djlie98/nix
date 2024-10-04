@@ -2,7 +2,7 @@
   programs.nixvim = {
     plugins = {
       project-nvim = {
-        enable = true;
+        enable = false;
         enableTelescope = true;
         settings = {
           detection_methods = [
