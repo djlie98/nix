@@ -28,7 +28,6 @@
     google-cloud-sdk
     htop
     jq
-    just
     k9s
     killall
     kubectl

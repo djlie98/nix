@@ -27,6 +27,7 @@
     ./plugins/lint.nix
     ./plugins/ai.nix
     ./plugins/flash.nix
+    ./plugins/navigation.nix
 
     # Config
     ./config/keymaps.nix

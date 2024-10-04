@@ -6,6 +6,7 @@
       plugins = [
         {
           name = "coffebar/neovim-project";
+          pkg = "coffebar/neovim-project";
           enabled = true;
 
           opts.__raw = ''
@@ -41,15 +42,5 @@
         }
       ];
     };
-    keymaps = [
-      {
-        mode = "n";
-        keys = "<leader>fp";
-        action = "<cmd>Telescope neovim-project discover<cr>";
-        options = {
-          desc = "[F]ind [P]roject";
-        };
-      }
-    ];
   };
 }

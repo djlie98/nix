@@ -9,7 +9,7 @@
           "g?" = "actions.show_help";
           "<CR>" = "actions.select";
           "<C-\\>" = "actions.select_split";
-          "<C-enter>" = "actions.select_vsplit";
+          "<C-\|>" = "actions.select_vsplit";
           "<C-t>" = "actions.select_tab";
           "<C-p>" = "actions.preview";
           "<leader>e" = "actions.close";
@@ -29,4 +29,3 @@
     };
   };
 }
-

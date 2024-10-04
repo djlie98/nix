@@ -1,13 +1,19 @@
-{pkgs, ...}: {
+{
   programs.nixvim = {
     plugins = {
       project-nvim = {
-        enable = false;
+        enable = true;
         enableTelescope = true;
         settings = {
           detection_methods = [
-            "lsp"
             "pattern"
+          ];
+
+          patterns = [
+            ">Projects"
+            "=configuration"
+            ">.config"
+            ">vulcan"
           ];
         };
       };
